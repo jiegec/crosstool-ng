@@ -2518,7 +2518,7 @@ CT_InstallCopyingInformation()
         dstdir="${licfile%/*}"
         dstdir="${CT_PREFIX_DIR}/share/licenses${dstdir#${CT_SRC_DIR}}"
         mkdir -p "${dstdir}"
-        CT_DoExecLog ALL cp -av "${licfile}" "${dstdir}/"
+        CT_DoExecLog ALL cp -av "${licfile}" "${dstdir}/" || true
     done
 
     # Also add crosstool's information

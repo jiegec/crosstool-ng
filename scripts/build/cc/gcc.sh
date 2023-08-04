@@ -851,7 +851,7 @@ gcc_movelibs()
         esac
         if [ -f "${gcc_dir}/${f}" ]; then
             CT_DoExecLog ALL mkdir -p "${dst_dir}"
-            CT_DoExecLog ALL mv "${gcc_dir}/${f}" "${dst_dir}/${f}"
+            CT_DoExecLog ALL mv "${gcc_dir}/${f}" "${dst_dir}/${f}" || true
             CT_DoExecLog ALL ln -sf "${rel}/${dst_dir#${canon_prefix}/}/${f}" "${gcc_dir}/${f}"
         fi
     done
